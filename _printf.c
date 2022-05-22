@@ -52,7 +52,7 @@ int _identifier(const char *format, f_id func_list[], va_list args)
 	{
 		if (format[i] == '%')
 		{
-			for (j = 0; func_list[j].id != NULL; j++;)
+			for (j = 0; func_list[j].id != NULL; j++)
 			{
 				if (format[i + 1] == func_list[j].id[0])
 				{
