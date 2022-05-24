@@ -18,17 +18,15 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 	va_list args;
-	
 	if (!format)
-		return (-1);
-	
+	return (-1);
 	va_start(args, format);
 
 /* cleaned up not to exceed 40line requirements,*/
 /* identified function created*/
 	len = _identifier(format, func_list, args);
 	va_end(args);
-	
+
 	return (len);
 }
 
@@ -46,10 +44,9 @@ int _identifier(const char *format, f_id func_list[], va_list args)
 	int i, j, len = 0;
 	
 	if (!format)
-		return (-1);
-	
+	return (-1);
 	for (i = 0; format[i] != '\0'; i++)
-	{
+{
 		if (format[i] == '%')
 		{
 			for (j = 0; func_list[j].id != NULL; j++)

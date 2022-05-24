@@ -10,6 +10,7 @@ int _putstr(va_list arg)
 {
 	int i = 0;
 	char *str;
+
 	str = va_arg(arg, char *);
 	if (!str)
 		str = "(null)";
@@ -17,8 +18,7 @@ int _putstr(va_list arg)
 	{
 		_putchar(str[i]);
 		i++;
-	}
-	
+}
 	return (i);
 }
 
@@ -32,17 +32,16 @@ char *rev_string(char *str)
 {
 	int len, top;
 	char tmp, *dest;
-	
+
 	for (len = 1; str[len] != '\0'; len++)
-		;
-	
-	dest = malloc(sizeof(char) * len + 1);
+	;
+		dest = malloc(sizeof(char) * len + 1);
 	if (!dest)
 		return (NULL);
-	_cpymem(dest, str, len);
-	
+_cpymem(dest, str, len);
+
 	for (top = 0; top < len; top++, len--)
-	{
+{
 		tmp = dest[len - 1];
 		dest[len - 1] = dest[top];
 		dest[top] = tmp;
@@ -60,10 +59,10 @@ char *rev_string(char *str)
 
 char *_cpymem(char *dest, char *src, unsigned int n)
 {
-	unsigned int i;
+unsigned int i;
 	for (i = 0; i < n; i++)
 		dest[i] = src[i];
-	dest[i] = '\0';
-	
+dest[i] = '\0';
+
 	return (dest);
-}
+	}
