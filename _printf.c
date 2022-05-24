@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 	va_list args;
+
 	if (!format)
 	return (-1);
 	va_start(args, format);
@@ -42,7 +43,7 @@ int _printf(const char *format, ...)
 int _identifier(const char *format, f_id func_list[], va_list args)
 {
 	int i, j, len = 0;
-	
+
 	if (!format)
 	return (-1);
 	for (i = 0; format[i] != '\0'; i++)
